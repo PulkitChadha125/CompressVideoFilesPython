@@ -77,6 +77,7 @@ def download_and_prepare_ffmpeg(project_root: Path) -> Path:
         # If ffmpeg_dir already contains something stale, clear it first
         for child in ffmpeg_dir.iterdir():
             if child.is_file():
+                
                 child.unlink(missing_ok=True)
             else:
                 shutil.rmtree(child, ignore_errors=True)
